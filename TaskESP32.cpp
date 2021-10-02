@@ -11,7 +11,7 @@ void Task::start() {
       xTaskCreatePinnedToCore(
         runTask,
         "Task",
-        1024,  
+        _stackSize,
         this,
         1,
         NULL, 
@@ -28,6 +28,10 @@ void Task::setup() {
 
 void Task::loop() {      
     }
+
+void Task::setStackSize(int stackSize) {
+  _stackSize = stackSize;
+}
 
 // Executa tarefa
 void runTask(void *pvParameters) 

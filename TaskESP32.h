@@ -16,6 +16,10 @@ class Task {
     void delay(unsigned long miliseconds);    
     virtual void setup();
     virtual void loop();
+    void setStackSize(int stackSize);
+
+  private:
+    int _stackSize = 2048;
 };
 
 #endif

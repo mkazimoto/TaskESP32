@@ -1,5 +1,6 @@
 TaskESP32	KEYWORD1
 Task	KEYWORD1
 start	KEYWORD2
+setStackSize	KEYWORD2
 
 
