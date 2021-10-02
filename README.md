@@ -26,7 +26,7 @@ Example:
 	}
 	
 
-You can adjust task priority and call stack size:
+You can adjust task priority and stack size:
 
 	#include <TaskESP32.h>
 	#include <IRremote.h>
