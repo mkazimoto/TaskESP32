@@ -3,6 +3,8 @@ Class Task for ESP32 using FreeRTOS
 
 Example:
 
+	#include <TaskESP32.h>
+
 	class BlinkTask : public Task {
 	public:  
 		void setup() {      
