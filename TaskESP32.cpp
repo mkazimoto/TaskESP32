@@ -13,7 +13,7 @@ void Task::start() {
         "Task",
         _stackSize,
         this,
-        1,
+        _priority,
         NULL, 
         ARDUINO_RUNNING_CORE
         );      
@@ -31,6 +31,10 @@ void Task::loop() {
 
 void Task::setStackSize(int stackSize) {
   _stackSize = stackSize;
+}
+
+void Task::setPriority(int priority) {
+  _priority = priority;
 }
 
 // Executa tarefa

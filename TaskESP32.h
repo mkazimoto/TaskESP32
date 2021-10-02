@@ -17,9 +17,11 @@ class Task {
     virtual void setup();
     virtual void loop();
     void setStackSize(int stackSize);
+    void setPriority(int priority);
 
   private:
     int _stackSize = 2048;
+    int _priority = 1;
 };
 
 #endif
