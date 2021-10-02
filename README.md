@@ -26,4 +26,32 @@ Example:
 	}
 	
 
+You can adjust task priority and call stack size:
 
+	#include <TaskESP32.h>
+	#include <IRremote.h>
+
+	class IrReceiverTask : public Task {
+	public:
+    
+		void setup() {
+			IrReceiver.begin(14);
+		}
+
+		void loop() {
+			if (IrReceiver.decode()) {
+				Serial.println(IrReceiver.decodedIRData.decodedRawData, HEX);        
+				IrReceiver.resume(); 
+			}          
+			delay(100);
+		}
+	} irReceiverTask;
+	
+	void setup() {
+		irReceiverTask.setPriority(1);
+		irReceiverTask.setStackSize(4096);
+		irReceiverTask.start();
+	}
+	
+	void loop() {
+	}
